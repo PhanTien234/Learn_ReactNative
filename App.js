@@ -6,12 +6,12 @@ export default function App() {
   const [message, setMessage] = useState("Hello World!");
 
   const changeMessage = () => {
-    setMessage("Hello from React Native");
+    setMessage("Hello from React Native!");
   };
 
   return (
     <View style={styles.container}>
-      <Greeting message={message} />
+      <Greeting message={message} style={{ color: "blue" }} />
       <Button title="Change Message" onPress={changeMessage} />
     </View>
   );
