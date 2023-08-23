@@ -1,16 +1,17 @@
-import { React, useState } from "react";
-import { Button, Text, View } from "react-native";
+import React, { useState } from "react";
+import { View, Button } from "react-native";
+import Greeting from "./components/Greeting";
 
 export default function App() {
   const [message, setMessage] = useState("Hello World!");
 
   const changeMessage = () => {
-    setMessage("Hello from React Native!");
+    setMessage("Hello from React Native");
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{message}</Text>
+      <Greeting message={message} />
       <Button title="Change Message" onPress={changeMessage} />
     </View>
   );
