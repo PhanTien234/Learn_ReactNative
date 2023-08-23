@@ -9,9 +9,24 @@ export default function App() {
   };
 
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>{message}</Text>
+    <View style={styles.container}>
+      <Text style={styles.text}>{message}</Text>
       <Button title="Change Message" onPress={changeMessage} />
     </View>
   );
 }
+
+const styles = {
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#f0f0f0",
+    padding: 20,
+  },
+  text: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 20,
+  },
+};
