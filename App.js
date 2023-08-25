@@ -1,33 +1,25 @@
-import React, { useState } from "react";
-import { View, Button } from "react-native";
-import Greeting from "./components/Greeting";
+import React from 'react';
+import {ActivityIndicator, StyleSheet, View} from 'react-native';
 
-export default function App() {
-  const [message, setMessage] = useState("Hello World!");
+const App = () => (
+  <View style={[styles.container, styles.horizontal]}>
+    <ActivityIndicator />
+    <ActivityIndicator size="large" />
+    <ActivityIndicator size="small" color="#0000ff" />
+    <ActivityIndicator size="large" color="#00ff00" />
+  </View>
+);
 
-  const changeMessage = () => {
-    setMessage("Hello from React Native!");
-  };
-
-  return (
-    <View style={styles.container}>
-      <Greeting message={message} style={{ color: "blue" }} />
-      <Button title="Change Message" onPress={changeMessage} />
-    </View>
-  );
-}
-
-const styles = {
+const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#f0f0f0",
-    padding: 20,
+    justifyContent: 'center',
   },
-  text: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginBottom: 20,
+  horizontal: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    padding: 10,
   },
-};
+});
+
+export default App;
